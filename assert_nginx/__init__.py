@@ -1,32 +1,6 @@
 from crossplane import lexer
 
 
-"""
-
-        it = lexer._lex_file_object(io.StringIO(ff.content_string))
-        it = lexer._balance_braces(it)
-        tree = parse(it)
-        for root in tree:
-            print(root['directive'], root['args'])
-            if root['directive'] != 'server':
-                continue
-            has_ssl_protocol = False
-            is_ssl = False
-            has_ciphers = False
-            for stmt in root['block']:
-                print("  ", stmt)
-                is_ssl |= assert_http2(site, stmt)
-                if is_ssl:
-                    has_ssl_protocol |= assert_ssl_protocols(site, stmt)
-                    has_ciphers |= assert_ciphers(site, stmt)
-            if is_ssl:
-                assert has_ssl_protocol
-                assert has_ciphers
-
-
-"""
-
-
 def parse_nginx_config(config):
     """
     Config is something readable, open('my_config', 'r') or
